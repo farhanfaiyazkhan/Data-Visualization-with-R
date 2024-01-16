@@ -82,5 +82,18 @@ ggplot(crickets, aes(x = rate, fill = species)) +
   geom_histogram(bins = 15) + 
   scale_fill_brewer(palette = "Dark2")
 
-ggplot(crickets, aes)
+ggplot(crickets, aes(x = rate, fill = species)) + 
+  geom_histogram(bins = 15, show.legend = FALSE) + 
+  facet_wrap(~species) + 
+  scale_fill_brewer(palette = "Dark2") +
+  theme_minimal()
+
+?facet_wrap
+
+ggplot(crickets, aes(x = rate, fill = species)) + 
+  geom_histogram(bins = 15,
+                 show.legend = FALSE) + 
+  facet_wrap(~species,
+             ncol = 1) +
+  scale_fill_brewer(palette = "Dark2")
 
